@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import time
 import traceback
 import urllib2
 import requests
@@ -46,6 +47,7 @@ def pull_data(inventory, start_index, end_index):
             except Exception as e:
                 writer.writerow([apply_uuid, apply_user_uuid, 0, 'no', 0, 'unknown', e.message])
                 traceback.print_exc()
+            time.sleep(0.5)
 
 
 def get_image_data(image_url):
